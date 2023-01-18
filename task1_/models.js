@@ -5,8 +5,11 @@ mongoose
   .then(() => {
     console.log("Connection Successful...");
   })
-  .catch(() => {
-    console.log("Connection is not eastablished , TRY again..");
+  // .catch(() => {
+  //   console.log("Connection is not eastablished , TRY again..");
+    .catch(err => {
+      console.log("Cannot connect to the database!", err);
+      process.exit();
   });
 
 const objectSchema = new mongoose.Schema(
